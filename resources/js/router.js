@@ -6,6 +6,8 @@ import PhotoList from './pages/PhotoList.vue'
 import Login from './pages/Login.vue'
 import store from './store'
 import SystemError from './pages/errors/System.vue'
+import PhotoDetail from './pages/PhotoDetail.vue'
+
 
 // VueRouterプラグインを使用する
 // これによって<RouterView />コンポーネントなどを使うことができる
@@ -27,6 +29,11 @@ const routes = [
                 next()
             }
         }
+    },
+    {
+        path: '/photos/:id',
+        component: PhotoDetail,
+        props: true
     },
     {
         path: '/500',
