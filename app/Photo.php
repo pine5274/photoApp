@@ -22,6 +22,8 @@ class Photo extends Model
         self::CREATED_AT, self::UPDATED_AT,
     ];
 
+    protected $perPage = 3;
+
     /** IDの桁数 */
     const ID_LENGTH = 12;
 
