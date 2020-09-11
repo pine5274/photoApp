@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 
 
 class Photo extends Model
@@ -20,6 +21,11 @@ class Photo extends Model
     protected $hidden = [
         'user_id', 'filename',
         self::CREATED_AT, self::UPDATED_AT,
+    ];
+
+    /** JSONに含める属性 */
+    protected $appends = [
+        'url',
     ];
 
     protected $perPage = 3;
